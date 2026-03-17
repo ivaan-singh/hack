@@ -6,16 +6,11 @@ app.get("/", (req, res) => {
   res.send("<h1>Welcome</h1>");
 });
 
-// LEVEL 3 login
-app.get("/login", (req, res) => {
-  const pass = req.query.password;
+app.get("/", (req, res) => {
+  const msg = req.query.msg || "Welcome";
 
-  if (pass == false) {
-    res.send("<h1>ACCESS GRANTED 😈</h1>");
-  } else {
-    res.send("<h1>ACCESS DENIED ❌</h1>");
-  }
+  res.send(`
+    <h1>${msg}</h1>
+    <p>Home page</p>
+  `);
 });
-
-// IMPORTANT for deployment
-app.listen(process.env.PORT || 3000);
