@@ -7,10 +7,11 @@ app.get("/", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  const msg = req.query.msg || "Welcome";
+  let msg = req.query.msg || "Welcome";
 
-  res.send(`
-    <h1>${msg}</h1>
-    <p>Home page</p>
-  `);
+  if (msg === "[html]") {
+    msg = "<h1 style='color:red'>HACKED 😈</h1>";
+  }
+
+  res.send(`<div>${msg}</div>`);
 });
