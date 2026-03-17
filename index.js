@@ -1,8 +1,5 @@
-app.get("/", (req, res) => {
-  const msg = req.query.msg || "Welcome to the site";
+const path = require("path");
 
-  res.send(`
-    <h1>${msg}</h1>
-    <p>Home page</p>
-  `);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
 });
