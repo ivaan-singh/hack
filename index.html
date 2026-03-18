@@ -1,20 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Shop</title>
-  <style>
-    body { font-family: Arial; text-align: center; }
-    .hero { background: black; color: white; padding: 100px; }
-    button { padding: 10px 20px; font-size: 18px; }
-  </style>
+  <title>Hack Playground 😈</title>
 </head>
 <body>
 
-<div class="hero">
-  <h1>JUST DO IT</h1>
-  <p>New Collection Out Now</p>
-  <button>Shop Now</button>
-</div>
+  <div id="content">
+    <h1>👋 Hi</h1>
+    <p>Do you wanna hack this website? 😈</p>
+
+    <h3>Step 1:</h3>
+    <p>Add <code>?msg=hello</code> to the URL</p>
+
+    <h3>Step 2:</h3>
+    <p>Try HTML like <code>?msg=&lt;h1&gt;HI&lt;/h1&gt;</code></p>
+
+    <h3>Step 3:</h3>
+    <p>Go crazy 😈</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const msg = params.get("msg");
+
+    if (msg) {
+      document.getElementById("content").innerHTML = msg;
+    }
+  </script>
 
 </body>
 </html>
