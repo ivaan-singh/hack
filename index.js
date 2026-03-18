@@ -10,3 +10,6 @@ app.get("/", (req, res) => {
 
   res.send(`<div>${msg}</div>`);
 });
+
+// REQUIRED for Render
+app.listen(process.env.PORT || 3000);
